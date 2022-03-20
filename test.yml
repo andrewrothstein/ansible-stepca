@@ -1,0 +1,10 @@
+---
+- hosts: all
+  roles:
+  - role: '{{ playbook_dir }}'
+  tasks:
+  - command: /usr/local/bin/step-ca --version
+    register: stepca_output
+  - name: step-ca --version
+    debug:
+      msg: '{{ stepca_output.stdout }}'

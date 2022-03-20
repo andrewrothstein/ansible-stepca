@@ -1,0 +1,10 @@
+---
+# vars file for stepca
+stepca_platform: '{{ stepca_os }}_{{ stepca_arch }}'
+stepca_name: step-ca_{{ stepca_ver }}
+stepca_archive: step-ca_{{ stepca_os }}_{{ stepca_ver }}_{{ stepca_arch }}.{{ stepca_archive_type | default("tar.gz") }}
+stepca_tmp_archive: /tmp/{{ stepca_archive }}
+stepca_url: '{{ stepca_mirror }}/v{{ stepca_ver }}/{{ stepca_archive }}'
+stepca_install_dir: '{{ stepca_parent_install_dir }}/{{ stepca_name }}'
+stepca_install_bin_dir: '{{ stepca_install_dir }}/bin'
+stepca_checksum: '{{ stepca_checksums[stepca_ver][stepca_platform] }}'
