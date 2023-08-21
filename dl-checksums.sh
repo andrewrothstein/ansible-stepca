@@ -43,4 +43,4 @@ dl_ver() {
     dl $ver $app $lchecksums windows amd64 zip
 }
 
-dl_ver ${1:-0.18.2} step-ca
+dl_ver ${1:-0.24.2} step-ca

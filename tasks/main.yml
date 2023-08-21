@@ -1,4 +1,6 @@
 ---
+- include_role:
+    name: andrewrothstein.unarchivedeps
 - name: resolve platform specific vars
   include_vars: '{{ item }}'
   with_first_found:
@@ -9,10 +11,10 @@
       skip: true
       paths:
         - '{{ role_path }}/vars'
-- name: check for install at {{ stepca_install_bin_dir }}
+- name: check for install at {{ stepca_install_dir }}
   become: true
   stat:
-    path: '{{ stepca_install_bin_dir }}'
+    path: '{{ stepca_install_dir }}'
   changed_when: false
   register: stepca_binary
 - when: not stepca_binary.stat.exists
@@ -32,7 +34,7 @@
         remote_src: true
         src: '{{ stepca_tmp_archive }}'
         dest: '{{ stepca_parent_install_dir }}'
-        creates: '{{ stepca_install_bin_dir }}'
+        creates: '{{ stepca_install_dir }}'
   always:
     - name: rm {{ stepca_tmp_archive }}
       become: true
@@ -45,6 +47,6 @@
   become_user: root
   with_items: '{{ stepca_exes }}'
   file:
-    src: '{{ stepca_install_bin_dir }}/{{ item }}'
+    src: '{{ stepca_install_dir }}/{{ item }}'
     dest: '{{ stepca_parent_install_dir }}/bin/{{ item }}'
     state: link

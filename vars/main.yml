@@ -6,5 +6,4 @@ stepca_archive: step-ca_{{ stepca_os }}_{{ stepca_ver }}_{{ stepca_arch }}.{{ st
 stepca_tmp_archive: /tmp/{{ stepca_archive }}
 stepca_url: '{{ stepca_mirror }}/v{{ stepca_ver }}/{{ stepca_archive }}'
 stepca_install_dir: '{{ stepca_parent_install_dir }}/{{ stepca_name }}'
-stepca_install_bin_dir: '{{ stepca_install_dir }}/bin'
 stepca_checksum: '{{ stepca_checksums[stepca_ver][stepca_platform] }}'
