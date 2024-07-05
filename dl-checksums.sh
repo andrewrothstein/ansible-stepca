@@ -34,6 +34,7 @@ dl_ver() {
     printf "  '%s':\n" $ver
 
     dl $ver $app $lchecksums darwin amd64
+    dl $ver $app $lchecksums darwin arm64
     dl $ver $app $lchecksums freebsd amd64
     dl $ver $app $lchecksums linux 386
     dl $ver $app $lchecksums linux amd64
@@ -43,4 +44,4 @@ dl_ver() {
     dl $ver $app $lchecksums windows amd64 zip
 }
 
-dl_ver ${1:-0.24.2} step-ca
+dl_ver ${1:-0.26.2} step-ca

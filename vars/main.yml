@@ -1,9 +1,13 @@
 ---
 # vars file for stepca
+stepca_os: '{{ ansible_system | lower }}'
+stepca_arch: '{{ stepca_arch_map[ansible_architecture] }}'
 stepca_platform: '{{ stepca_os }}_{{ stepca_arch }}'
 stepca_name: step-ca_{{ stepca_ver }}
 stepca_archive: step-ca_{{ stepca_os }}_{{ stepca_ver }}_{{ stepca_arch }}.{{ stepca_archive_type | default("tar.gz") }}
-stepca_tmp_archive: /tmp/{{ stepca_archive }}
+stepca_tmp_archive: '{{ stepca_tmp_dir | default("/tmp") }}/{{ stepca_archive }}'
 stepca_url: '{{ stepca_mirror }}/v{{ stepca_ver }}/{{ stepca_archive }}'
-stepca_install_dir: '{{ stepca_parent_install_dir }}/{{ stepca_name }}'
 stepca_checksum: '{{ stepca_checksums[stepca_ver][stepca_platform] }}'
+stepca_install_dir: '{{ stepca_parent_install_dir }}/{{ stepca_name }}'
+stepca_install_exe: '{{ stepca_install_dir }}/step-ca'
+stepca_link: '{{ stepca_parent_install_dir }}/bin/step-ca'

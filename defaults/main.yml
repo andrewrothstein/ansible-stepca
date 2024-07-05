@@ -1,28 +1,31 @@
 ---
 # defaults file for stepca
-stepca_ver: 0.24.2
-stepca_os: linux
-stepca_arch: amd64
+stepca_ver: 0.26.2
+stepca_arch_map:
+  aarch64: arm64
+  arm64: arm64
+  x86_32: 386
+  x86_64: amd64
 stepca_mirror: https://github.com/smallstep/certificates/releases/download
 stepca_parent_install_dir: /usr/local
-stepca_exes:
-  - step-ca
 stepca_checksums:
-  # https://github.com/smallstep/certificates/releases/download/v0.24.2/checksums.txt
-  '0.24.2':
-    # https://github.com/smallstep/certificates/releases/download/v0.24.2/step-ca_darwin_0.24.2_amd64.tar.gz
-    darwin_amd64: sha256:3d2c4c57dce1c5bdf6be860516bcb168b31bdf5a5cf503b7fb2aa9b274c9c9a6
-    # https://github.com/smallstep/certificates/releases/download/v0.24.2/step-ca_freebsd_0.24.2_amd64.tar.gz
-    freebsd_amd64: sha256:99311b8861bff465fec5ad3db1e924d8675c853253896025f659a59c6ec2868f
-    # https://github.com/smallstep/certificates/releases/download/v0.24.2/step-ca_linux_0.24.2_386.tar.gz
-    linux_386: sha256:c7c18a387fa0893f73840319d5f89a4fa86ed5d2a9b80600c7ab46cc4838de38
-    # https://github.com/smallstep/certificates/releases/download/v0.24.2/step-ca_linux_0.24.2_amd64.tar.gz
-    linux_amd64: sha256:109597538bdc35e02bc41f9d22d9d64e9583728dda336d313a7496740640a421
-    # https://github.com/smallstep/certificates/releases/download/v0.24.2/step-ca_linux_0.24.2_arm64.tar.gz
-    linux_arm64: sha256:7e1b63a5420402ccd58c3c5d4cd82ad2386453570487f7cc14b66002bf081011
-    # https://github.com/smallstep/certificates/releases/download/v0.24.2/step-ca_linux_0.24.2_armv6.tar.gz
-    linux_armv6: sha256:5776402fafccfa67c08637262e46b240d40a3df68acd20e96ee7684c3bf2bcc1
-    # https://github.com/smallstep/certificates/releases/download/v0.24.2/step-ca_linux_0.24.2_armv7.tar.gz
-    linux_armv7: sha256:070a384e85b54770fabe22aca00e629248cda2787a81f2350d4b4a33defefc70
-    # https://github.com/smallstep/certificates/releases/download/v0.24.2/step-ca_windows_0.24.2_amd64.zip
-    windows_amd64: sha256:88c91ab0781b235218a8a4595ef1b02175c9c2808026c0870717dc64f7960b16
+  # https://github.com/smallstep/certificates/releases/download/v0.26.2/checksums.txt
+  '0.26.2':
+    # https://github.com/smallstep/certificates/releases/download/v0.26.2/step-ca_darwin_0.26.2_amd64.tar.gz
+    darwin_amd64: sha256:b1dc65790e9a36df90633becbde0ef45cbff0265d57e408d1d67bd9b6d525c5b
+    # https://github.com/smallstep/certificates/releases/download/v0.26.2/step-ca_darwin_0.26.2_arm64.tar.gz
+    darwin_arm64: sha256:dd3dd7ba936b9d1f474c40e52bdc6af4b3738b6eec3d0d39925e19d61b53b0e2
+    # https://github.com/smallstep/certificates/releases/download/v0.26.2/step-ca_freebsd_0.26.2_amd64.tar.gz
+    freebsd_amd64: sha256:92878bb900aa712ea73d87cc7f2cfad076f16ec67f335cf5e9fee67a9330d141
+    # https://github.com/smallstep/certificates/releases/download/v0.26.2/step-ca_linux_0.26.2_386.tar.gz
+    linux_386: sha256:f7cfb9f9527cd8edca82fb6cdc5ed23414413d70a639110cf4bd83159d548c07
+    # https://github.com/smallstep/certificates/releases/download/v0.26.2/step-ca_linux_0.26.2_amd64.tar.gz
+    linux_amd64: sha256:e29c9e865dfe4d27f4fe54e86e549e94bc1830234a0c72443cf6c4890ab23e94
+    # https://github.com/smallstep/certificates/releases/download/v0.26.2/step-ca_linux_0.26.2_arm64.tar.gz
+    linux_arm64: sha256:cd0a40ec5c6d7fb60c027cc645658b134f2301767a41ec6fc20d162355594732
+    # https://github.com/smallstep/certificates/releases/download/v0.26.2/step-ca_linux_0.26.2_armv6.tar.gz
+    linux_armv6: sha256:32b17962794b9e5f0d1171dcee854098453442252fdbdafb41f9f407dea472d5
+    # https://github.com/smallstep/certificates/releases/download/v0.26.2/step-ca_linux_0.26.2_armv7.tar.gz
+    linux_armv7: sha256:5691ccec390cd2eb627e8bae474b7655c5e8302dc641a9fca6fd4af1038b2f63
+    # https://github.com/smallstep/certificates/releases/download/v0.26.2/step-ca_windows_0.26.2_amd64.zip
+    windows_amd64: sha256:9d8cc30bd5a78f051ff02a158e53cc958e623842dbcbd6a8b8630c1d18e8e9ab

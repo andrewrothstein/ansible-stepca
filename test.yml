@@ -1,10 +1,13 @@
 ---
-- hosts: all
+- name: Testing andrewrothstein.stepca
+  hosts: all
   roles:
-  - role: '{{ playbook_dir }}'
+    - role: '{{ playbook_dir }}'
   tasks:
-  - command: /usr/local/bin/step-ca --version
-    register: stepca_output
-  - name: step-ca --version
-    debug:
-      msg: '{{ stepca_output.stdout }}'
+    - name: Executing 'step-ca --version'
+      ansible.builtin.command: step-ca --version
+      changed_when: false
+      register: stepca_output
+    - name: Output from 'step-ca --version'
+      ansible.builtin.debug:
+        msg: '{{ stepca_output.stdout }}'
